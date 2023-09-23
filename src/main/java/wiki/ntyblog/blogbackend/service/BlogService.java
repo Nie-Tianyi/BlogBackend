@@ -1,9 +1,12 @@
 package wiki.ntyblog.blogbackend.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import wiki.ntyblog.blogbackend.dao.Blog;
 import wiki.ntyblog.blogbackend.repos.BlogRepo;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,6 +24,11 @@ public class BlogService {
 
     public List<UUID> getAllPostsId(){
         return blogRepo.findAllIds();
+    }
+
+    public List<Blog> getAllPosts(){
+
+        return blogRepo.findAll();
     }
 
     public Blog getPostById(String postId){

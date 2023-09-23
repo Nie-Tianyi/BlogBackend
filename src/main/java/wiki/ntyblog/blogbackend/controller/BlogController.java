@@ -49,13 +49,22 @@ public class BlogController {
     }
 
     @GetMapping("/getAllPostsId")
+    @ResponseBody
     public ResponseEntity getAllPostsId(){
         return ResponseEntity.ok(blogService.getAllPostsId());
     }
 
+    @GetMapping("/getAllPosts")
+    @ResponseBody
+    public ResponseEntity getAllPosts(){
+        return ResponseEntity.ok(blogService.getAllPosts());
+    }
+
     @GetMapping("/{postId}")
+    @ResponseBody
     public ResponseEntity getPostById(@PathVariable String postId){
         return ResponseEntity.ok(blogService.getPostById(postId));
     }
+
 
 }
