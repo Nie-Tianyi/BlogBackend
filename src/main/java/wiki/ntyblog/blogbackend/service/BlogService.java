@@ -27,7 +27,6 @@ public class BlogService {
     }
 
     public List<Blog> getAllPosts(){
-
         return blogRepo.findAll();
     }
 
